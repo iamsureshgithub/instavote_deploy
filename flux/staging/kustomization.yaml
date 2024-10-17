@@ -2,3 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
 - ../base
+patchesStrategicMerge:
+  - redis-staging-kustomization.yaml
+  - vote-staging-kustomization.yaml
+  - worker-staging-kustomization.yaml
