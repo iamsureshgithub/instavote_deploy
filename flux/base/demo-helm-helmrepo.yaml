@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: demohelm-nginx
+  labels:
+    toolkit.fluxcd.io/tenant: sre-team
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: demo-helm
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  url: https://iamsureshgithub.github.io/helm-charts/
