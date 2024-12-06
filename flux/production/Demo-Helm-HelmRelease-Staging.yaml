@@ -12,7 +12,7 @@ spec:
         name: demo-helm
       version: 0.1.*
   interval: 10m0s
-  releaseName: podinfo
+  releaseName: demo-helm-staging-011
   targetNamespace: demohelm-nginx
   install:
     remediation:
