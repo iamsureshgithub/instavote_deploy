@@ -10,7 +10,7 @@ apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
   name: demo-helm
-  namespace: flux-system
+  namespace: demohelm-nginx
 spec:
   interval: 1m0s
   url: https://iamsureshgithub.github.io/helm-charts/
@@ -19,7 +19,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: demo-helm-staging-011
-  namespace: flux-system
+  namespace: demohelm-nginx
 spec:
   chart:
     spec:
@@ -29,8 +29,8 @@ spec:
         name: demo-helm
       version: 0.1.*
   interval: 10m0s
-  releaseName: demo-helm-staging-011
-  targetNamespace: demohelm-nginx
+  #releaseName: demo-helm-staging-011
+  #targetNamespace: demohelm-nginx
   install:
     remediation:
       retries: 3
